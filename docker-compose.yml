@@ -1,0 +1,29 @@
+version: "3"
+services:
+  backend:
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      DEBUG: ${DEBUG}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    build: ./twerkout_backend
+    container_name: twerkout-backend
+    ports:
+      - "8005:8000"
+    volumes:
+      - "./twerkout_backend/server:/twerkout_backend/server"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    container_name: twerkout-db
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - "./db:/var/lib/postgresql/data"
+    ports:
+      - "5437:5432"
