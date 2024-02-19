@@ -26,7 +26,13 @@ class TestRegisterUserService:
     height = 173
 
     def test_create_user_success(self):
-        profile = register_user(username=self.username, password=self.password, age=self.age, weight=self.weight, height=self.height)
+        profile = register_user(
+            username=self.username,
+            password=self.password,
+            age=self.age,
+            weight=self.weight,
+            height=self.height,
+        )
 
         assert profile.user.username == self.username
         assert profile.user.check_password(self.password) is True

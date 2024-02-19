@@ -25,7 +25,7 @@ class TestUserRegistrationAPIView:
             data={
                 "username": self.username,
                 "password": self.password,
-            }
+            },
         )
 
         assert response.status_code == status.HTTP_201_CREATED
@@ -44,7 +44,7 @@ class TestUserRegistrationAPIView:
                 "age": self.age,
                 "weight": self.weight,
                 "height": self.height,
-            }
+            },
         )
 
         assert response.status_code == status.HTTP_201_CREATED

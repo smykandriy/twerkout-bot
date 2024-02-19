@@ -16,7 +16,9 @@ class TestUserManagerModel:
     def test_create_superuser(self):
         user_manager = UserManager()
 
-        user = user_manager.create_superuser(username=self.username, password=self.password)
+        user = user_manager.create_superuser(
+            username=self.username, password=self.password
+        )
 
         assert user.username == self.username
         assert user.check_password(self.password) is True
