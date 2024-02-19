@@ -12,7 +12,7 @@ services:
     ports:
       - "8005:8000"
     volumes:
-      - "./twerkout_backend/server:/twerkout_backend/server"
+      - "./twerkout_backend:/twerkout_backend"
     depends_on:
       - db
 
