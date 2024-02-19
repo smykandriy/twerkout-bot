@@ -26,9 +26,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    age = models.PositiveIntegerField(blank=True)
-    weight = models.PositiveIntegerField(blank=True)
-    height = models.PositiveIntegerField(blank=True)
+    age = models.PositiveIntegerField(null=True)
+    weight = models.PositiveIntegerField(null=True)
+    height = models.PositiveIntegerField(null=True)
 
     def __str__(self) -> tuple:
         return self.user.username, self.age

@@ -6,3 +6,5 @@ __pycache__/
 db/
 docker-launch.sh
 twerkout_backend/venv/
+**/__pycache__/
+.pytest_cache/
